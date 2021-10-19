@@ -5,7 +5,10 @@
 */
 
 //Code here
-
+let me = {
+  name: "Kristian Workinger",
+  age: 32
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -16,21 +19,26 @@
 //and goodBoy/goodGirl (a boolean).
 
 //Code here
-
+let dog = {
+  name: "Tank",
+  color: "Brown/Black",
+  age: 32,
+  goodBoy: true
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
+// console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
+// console.log(dog["color"])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -40,22 +48,31 @@
 */
 
 //Code here
-
+let favoriteThings = {
+  band: "Lynyrd Skynyrd",
+  food: "BBQ",
+  person: "@pythoncowboy aka Trapper Mike",
+  book: "idk rn",
+  movie: "Action: Gladiator, Drama: The Count of Monte Cristo",
+  holiday: "Christmas"
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
 //Code here
-
-
+favoriteThings.car = "McLaren F1"
+favoriteThings.show = "Outer Banks"
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
 //Code here
-
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book = "Harry Potter"
+// console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -73,7 +90,11 @@ var carDetails = {
 */
 
 //Code Here
-
+let carColor = carDetails.color
+let carMake = carDetails.make
+let carModel = carDetails.model
+let carYear = carDetails.year
+// console.log(carColor)
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -84,14 +105,18 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting() {
   //Code Here
-  
+  let {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
+let obj = {
+  firstName: "Jim",
+  lastName: "Halpert",
+  title: "Assistant Regional Manager"
+}
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -105,7 +130,17 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation() {
+  let {utah, california, texas, arizona} = states
+  return utah + california + texas + arizona
+}
+let states = {
+  utah: 1,
+  california: 2,
+  texas: 4,
+  arizona: 3
+}
+// console.log(totalPopulation(states))
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -119,8 +154,18 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+let macros = {
+  carb: "Atkins is for idiots",
+  fat: "Omegas or something, healthy fats ya'll",
+  protein: "1g per lb of body weight. 40g before bed."
+}
+function ingredients() {
+  let {carb, fat, protein} = macros
+  arr = []
+  arr.push(carb, fat, protein)
+  return arr
+}
+// console.log(ingredients(macros))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -141,7 +186,9 @@ var user = {
 */
 
 //Code Here
-
+user.name = "Bryan G. Smith"
+user.email = "bryan.smith@devmounta.in"
+// console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,7 +196,8 @@ var user = {
 */
 
 //Code Here
-
+delete user.age
+console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -159,7 +207,11 @@ var user = {
 */
 
 //Code here
-
+class Cat {
+  constructor(name, age, color){
+    this.name = 
+  }
+}
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
