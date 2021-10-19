@@ -197,7 +197,7 @@ user.email = "bryan.smith@devmounta.in"
 
 //Code Here
 delete user.age
-console.log(user)
+// console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -209,9 +209,14 @@ console.log(user)
 //Code here
 class Cat {
   constructor(name, age, color){
-    this.name = 
+    this.name = name
+    this.age = age
+    this.color = color
   }
 }
+let cat = new Cat("jinx", 4, "tabby")
+// console.log(cat.name)
+
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -223,7 +228,18 @@ class Cat {
 */
 
 //Code here
-
+class Wizard {
+  constructor (name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+let georgeWeasley = new Wizard("George Weasley", 43, '"Mischief Managed"')
+// georgeWeasley.castSpell()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -248,6 +264,24 @@ class Cat {
 */
 
 //Code Here
+class Phone {
+  constructor (brand, model, storage, color, price) {
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell() {
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+    console.log(`${this.price}`)
+  }
+}
 
   
 /*
@@ -261,7 +295,9 @@ class Cat {
 */
 
 //Code Here
-
+let razr = new Phone("Motorola", "Razr", "13.5MB", "Hot Pink", 250.00)
+let palmPad = new Phone("PalmOne, Inc.", "Palmpad Treo 600", "24MB", "Grey", 350.00)
+let iPhone = new Phone("Apple, Inc.", "A1203 1st Gen iPhone", "8GB", "Black", 600.00)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -270,8 +306,7 @@ class Cat {
 */ 
 
 //Code Here 
-
-
+// razr.changePrice(20.00)
 /*
   Now call the sell method on one of your other phone objects
 
@@ -279,7 +314,7 @@ class Cat {
 */
 
 //Code Here 
-
+// palmPad.sell()
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -298,8 +333,10 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
-
+let colorsCopy = {
+  ...colors
+}
+// console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -326,7 +363,10 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
+let helensInfo = {
+  ...contactInfo
+  ...shippingInfo
+}
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
