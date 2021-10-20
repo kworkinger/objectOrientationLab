@@ -364,12 +364,12 @@ const shippingInfo = {
 
 //Code Here
 let helensInfo = {
-  ...contactInfo
+  ...contactInfo,
   ...shippingInfo
 }
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
-
+console.log(helensInfo)
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
@@ -384,14 +384,24 @@ let helensInfo = {
 */
 
 //Code Here 
-
+class Vehicle {
+  constructor (capacity, color, mileage) {
+    this.capacity = capacity
+    this.color = color
+    this.mileage = mileage
+  }
+  move(miles) {
+    Vehicle.mileage = miles
+    console.log(Vehicle.mileage)
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(5, "gray", 70,000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -403,17 +413,23 @@ let helensInfo = {
 */
 
 //Code Here
-
+class Motorcycle extends Vehicle {
+  constructor(capacity, color, mileage, make) {
+    super(capacity, color, mileage)
+    this.make = make
+    this.isCool = true
+  }
+}
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
-
+let myFirstMotorcycle = new Motorcycle(2, "white/red", `40,000`, "Yamaha")
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(`50,000`)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -430,7 +446,23 @@ let helensInfo = {
 */
 
 //Code Here
-
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+    super(capacity, color, mileage)
+    this.name = name
+    this.type = type
+    this.isSeaworthy = isSeaworthy
+  }
+  checkSeaWorthiness() {
+    if(this.isSeaworthy === true) {
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy!`)
+    } else
+      console.log(`You need to get your ${this.type} in shape!`)
+  }
+  performMaintenance() {
+    this.isSeaworthy = true
+  }
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -438,21 +470,22 @@ let helensInfo = {
 */
 
 //Code Here
-
+let myFirstBoat = new Boat(4, "red", `39,000`,'"The Vessel South of Tressels"', "speedboat", false)
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
-
+myFirstBoat.checkSeaWorthiness()
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
-
+myFirstBoat.performMaintenance()
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+myFirstBoat.checkSeaWorthiness()
